@@ -28,7 +28,7 @@ const App = () => {
 		<div className="root">
 			<Keys {...{ near, update, localKeys }} />
 			<Contract {...{ near, update, localKeys, wallet, account }} />
-			<Wallet {...{ wallet, account }} />
+			{/* <Wallet {...{ wallet, account }} /> */}
 		</div>
 	);
 };

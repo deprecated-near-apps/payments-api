@@ -30,5 +30,6 @@ module.exports = {
 	connection,
 	contract,
 	contractName,
-	contractAccount,
+    contractAccount,
+    accountSecret: credentials.private_key,
 };
