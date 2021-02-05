@@ -59,6 +59,56 @@ app.post('/deposit-account', async (req, res) => {
     req.near.connection.signer.keyStore.setKey(networkId, implicitAccountId, keyPair);
     const result = await account.deleteAccount(contractName)
 
+    /********************************
+    Store `result.transaction.hash` for records, combined with name, eventName in your DATABASE
+
+    Later using RPC you can determine value
+    Using httpie example:
+
+    http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare method=EXPERIMENTAL_tx_status params:='["4emkqTHfuqfbkZdgChQhXoNZyB4ZXSqNaKtyxa8TpB1p", "dev-1612494521961-7654170"]'
+
+    yields:
+    {
+        "id": "dontcare",
+        "jsonrpc": "2.0",
+        "result": {
+            "receipts": [
+                {
+                    "predecessor_id": "system",
+                    "receipt": {
+                        "Action": {
+                            "actions": [
+                                {
+                                    "Transfer": {
+                                        "deposit": "999948890300000000000000"
+                                    }
+                                }
+                            ],
+                            ...
+                        }
+                    },
+                    "receipt_id": "8j2fGRHyhb9td1wMCbBPqU6PrXPGGsy1WUYzgGpTiciK",
+                    "receiver_id": "dev-1612494521961-7654170"
+                }
+            ],
+            "receipts_outcome": [
+                {
+                    "block_hash": "aqrKPQVmEfbiYRrvFaL9nX6mMusyo45Lztfg7rz5xjv",
+                    "id": "4D1Qwavzk7249RBqRsgn3DNAFh9Gt94UCs7iLQGMnx8r",
+                    "outcome": {
+                        "executor_id": "5560d92d22d189e4f25d75d60b189aa7a4ab2e4ac2558c7edc33501d67897e09",
+                        ...
+                    },
+                    ...
+                },
+                ...
+            ],
+            ...
+        },
+        ...
+    }
+    ********************************/
+
 	res.json({ result, success: true });
 });
 
