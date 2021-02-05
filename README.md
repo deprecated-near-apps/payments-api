@@ -1,8 +1,17 @@
-# Live App Review 1 - App Access Keys
+# Live App Review 5 - Payments API Part 1
 
 This repo is a companion to this video:
+[![Live App Review 1 - App Access Keys](https://img.youtube.com/vi/0MySC4UDCXM/0.jpg)](https://youtu.be/0MySC4UDCXM)
 
-[![Live App Review 1 - App Access Keys](https://img.youtube.com/vi/dT99JLpO2Q8/0.jpg)](https://www.youtube.com/watch?v=dT99JLpO2Q8)
+Learn how to make a Payments API that accepts NEAR tokens.
+
+You can manage unique address that user's can deposit to with their username + some meta data.
+
+In this example I "enter a tournament" by submitting my username and a tournament name.
+
+An account is generated and I sent NEAR to the account.
+
+Finally, I deposit my near and the payments API destroys the temporary account and takes the funds.
 
 # NEAR App Boilerplate
 
