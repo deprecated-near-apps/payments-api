@@ -1,6 +1,7 @@
 # Live App Review 5 - Payments API Part 1
 
 This repo is a companion to this video:
+
 [![Live App Review 1 - App Access Keys](https://img.youtube.com/vi/0MySC4UDCXM/0.jpg)](https://youtu.be/0MySC4UDCXM)
 
 Learn how to make a Payments API that accepts NEAR tokens.
